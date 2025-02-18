@@ -19,7 +19,7 @@ export class ImagesController {
   @Get()
   async listImages() {
     const images = await this.imagesService.listImages();
-    return { images };
+    return { data: images };
   }
 
   @Get(':publicId')
@@ -31,6 +31,6 @@ export class ImagesController {
   @Delete(':publicId')
   async deleteImage(@Param('publicId') publicId: string) {
     await this.imagesService.deleteImage(publicId);
-    return { message: 'Image deleted successfully' };
+    return { message: 'Imágen Eliminada Correctamente' };
   }
 }
